@@ -1,0 +1,13 @@
+<a href="#" id="new-button">New</a>
+<div class="valley--info--container" *ngFor="let valley of valleys">
+  <div class="valley--item">ID: {{ valley.id }} </div>
+  <div class="valley--item">Name: {{ valley.name }}</div>
+  <div class="valley--item">Location: {{ valley.location }}</div>
+  <div class="valley--item">Level: {{ valley.level }}</div>
+  <div class="valley--item">Further Information: {{ valley.FurtherInformation }}</div>
+  <div class="valley--item">Altitude: {{ valley.altitude }}</div>
+  <td>
+    <a href="#" (click)="editValley(this)">Edit</a>
+    <a href="#" (click)="deleteValley(this)">Delete</a>
+  </td>
+</div>

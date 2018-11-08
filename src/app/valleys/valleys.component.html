@@ -1,3 +1,7 @@
+<div class="container">
+  <h1>Valleys</h1>
+  <hr/>
+</div>
 <div class="bg">
   <div class="mountain">
     <div class="mountain-top">
@@ -21,5 +25,14 @@
     </div>
   </div>
   <div class="cloud"></div>
-</div>
+  <div class="row">
+    <div class="col-md-4">
+        <app-add-or-update-valley (valleyCreated)="addOrUpdateValley($event)" [valleyInfo]="currentValley"></app-add-or-update-valley>
+    </div>
+    <div class="col-md-8">
+        <app-view-valley-info [valleys]="valleys" (editClicked)="editClicked($event)" (newClicked)="newClicked()" (recordDeleted)="deleteClicked($event)"></app-view-valley-info>
+    </div>
+  </div>
 <router-outlet></router-outlet>
+</div>
+
