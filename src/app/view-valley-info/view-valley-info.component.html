@@ -4,10 +4,10 @@
   <div class="valley--item">Name: {{ valley.name }}</div>
   <div class="valley--item">Location: {{ valley.location }}</div>
   <div class="valley--item">Level: {{ valley.level }}</div>
-  <div class="valley--item">Further Information: {{ valley.FurtherInformation }}</div>
+  <div class="valley--item">Further Information: {{ valley.furtherInformation }}</div>
   <div class="valley--item">Altitude: {{ valley.altitude }}</div>
   <td>
-    <a href="#" (click)="editValley(this)">Edit</a>
-    <a href="#" (click)="deleteValley(this)">Delete</a>
+    <a href="#" (click)="editRecord(this.valley)">Edit</a>
+    <a href="#" (click)="deleteRecord(this.valley)">Delete</a>
   </td>
 </div>

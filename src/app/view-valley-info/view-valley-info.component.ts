@@ -17,16 +17,16 @@ export class ViewValleyInfoComponent implements OnInit {
 
   }
 
-  public deleteValley(record) {
+  public deleteRecord(record) {
     this.recordDeleted.emit(record);
   }
 
-  public editValley(record) {
+  public editRecord(record) {
     const clonedRecord = Object.assign({}, record);
     this.editClicked.emit(clonedRecord);
   }
 
-  public newValley() {
+  public newRecord() {
     this.newClicked.emit();
   }
 
