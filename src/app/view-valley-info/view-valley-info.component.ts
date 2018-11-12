@@ -1,4 +1,7 @@
+import { ValleysService } from './../valleys.service';
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ValleysComponent } from '../valleys/valleys.component';
 
 @Component({
   selector: 'app-view-valley-info',
@@ -10,11 +13,13 @@ export class ViewValleyInfoComponent implements OnInit {
   @Output() newClicked = new EventEmitter<any>();
   @Output() editClicked = new EventEmitter<any>();
   @Input() valleys: Array<any>;
+  valley: ValleysComponent;
 
   constructor() { }
 
+  showValleyInfo = false;
   ngOnInit() {
-
+    console.log(this.valleys);
   }
 
   public deleteRecord(record) {
@@ -30,4 +35,18 @@ export class ViewValleyInfoComponent implements OnInit {
     this.newClicked.emit();
   }
 
+
+  public showValley(v: string) {
+    this.valleys.forEach(element => {
+      if (element.name === v) {
+        element.visibility = true;
+      }
+    });
+  }
+
+  public hideValley() {
+    this.valleys.forEach(element => {
+      element.visibility = false;
+    });
+  }
 }

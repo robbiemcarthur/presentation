@@ -1,7 +1,8 @@
-import { AddOrUpdateValleyComponent } from './../add-or-update-valley/add-or-update-valley.component';
+import { ViewValleyInfoComponent } from './../view-valley-info/view-valley-info.component';
 import { ValleysService } from './../valleys.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import * as _ from 'lodash';
+import { ChildActivationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-valleys',
@@ -11,6 +12,8 @@ import * as _ from 'lodash';
 export class ValleysComponent implements OnInit {
   public valleys: Array<any>;
   public currentValley: any;
+
+  @ViewChild(ViewValleyInfoComponent) child;
 
   constructor(private valleyService: ValleysService) {
     valleyService.get().subscribe((data: any) => this.valleys = data);
@@ -27,8 +30,9 @@ export class ValleysComponent implements OnInit {
       name: '',
       location: '',
       level: '',
-      FurtherInformation: '',
-      altitude: 0
+      furtherInformation: '',
+      altitude: 0,
+      visibility: false
     };
   }
 
@@ -63,5 +67,10 @@ export class ValleysComponent implements OnInit {
     this.valleyService.remove(record).subscribe(
       result => this.valleys.splice(deleteIndex, 1)
     );
+  }
+
+  private showValleyInfo(valley: string) {
+    this.child.hideValley();
+    this.child.showValley(valley);
   }
 }

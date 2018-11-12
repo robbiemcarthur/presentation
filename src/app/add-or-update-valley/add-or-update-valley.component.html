@@ -1,6 +1,6 @@
-<div>
-  <h2 *ngIf="!valleyInfo || valleyInfo.id === undefined">Add record</h2>
-  <h2 *ngIf="valleyInfo && valleyInfo.id !== undefined">Update record (ID: )</h2>
+<div class="valley-form">
+  <h2 *ngIf="!valleyInfo || valleyInfo.id === undefined">Add Valley</h2>
+  <h2 *ngIf="valleyInfo && valleyInfo.id !== undefined">Update Valley: {{ valleyInfo.name }}</h2>
   <form>
       <div class="form-group">
           <label for="name-input">Name:</label>
@@ -15,14 +15,14 @@
           <input type="string" id="level-input" [(ngModel)]="valleyInfo.level" (input)="valleyInfo.level = $event.target.value" class="form-control" />
       </div>
       <div class="form-group">
-        <label for="further-information-input">Further Information</label>
+        <label for="further-information-input">Further Information: </label>
         <input type="string" id="further-information-input" [(ngModel)]="valleyInfo.FurtherInformation" (input)="valleyInfo.FurtherInformation = $event.target.value" class="form-control" />
     </div>
     <div class="form-group">
-      <label for="altitude-input">Altitude</label>
+      <label for="altitude-input">Altitude (ft):</label>
       <input type="number" id="altitude-input" [(ngModel)]="valleyInfo.altitude" (input)="valleyInfo.altitude = $event.target.value" class="form-control" />
   </div>
       <button type="button" class="btn btn-primary" (click)="addOrUpdateValley($event);">Save</button>
-
   </form>
- </div>
+</div>
+

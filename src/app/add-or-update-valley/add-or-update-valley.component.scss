@@ -1,0 +1,23 @@
+h2 {
+    font-size: 1rem;
+    font-family: "Roboto", "sans-serif";
+    color: #ced6e0;
+    text-align: center;
+}
+
+.valley-form {
+    font-family: "Roboto", "sans-serif";
+    color: #f1f2f6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column wrap;
+    margin-right: 77rem;
+    margin-left: 1rem;
+
+    .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+}

@@ -1,0 +1,42 @@
+.valley--info--container {
+display: flex;
+flex-direction: column;
+font-family: "Roboto", "sans-serif";
+color: #f1f2f6;
+margin-left: 1rem;
+
+    .valley--info {
+        background-color: #fff;
+        display: inherit;
+        flex-flow: column wrap;
+        margin-right: 1rem;
+        font-family: inherit;
+        color: #000;
+        font-size: 0.75rem;
+        margin-top: 4rem;
+        margin-left: 15rem;
+        width: 20%;
+        padding: 1rem;
+        border-radius: 5px;
+
+        .valley--item {
+            display: flex;
+            flex-flow: row wrap;
+            margin-top: 0.5rem;
+        }
+
+        .buttons {
+            border-top: 1px solid;
+            padding-top: 1rem;
+        }
+
+        a {
+            font-family: inherit;
+            color: inherit;
+            display: inherit;
+            justify-content: space-between;
+            flex-direction: row;
+            margin-right: 1rem;
+        }
+    }
+}

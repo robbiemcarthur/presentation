@@ -1,13 +1,16 @@
-<a href="#" id="new-button">New</a>
-<div class="valley--info--container" *ngFor="let valley of valleys">
-  <div class="valley--item">ID: {{ valley.id }} </div>
+<div class="valley--info--container">
+<div *ngFor="let valley of valleys">
+  <div class="valley--info" *ngIf="valley.visibility">
   <div class="valley--item">Name: {{ valley.name }}</div>
   <div class="valley--item">Location: {{ valley.location }}</div>
   <div class="valley--item">Level: {{ valley.level }}</div>
   <div class="valley--item">Further Information: {{ valley.furtherInformation }}</div>
   <div class="valley--item">Altitude: {{ valley.altitude }}</div>
-  <td>
+  <div class="buttons">
+      <a href="#" (click)="newRecord()" id="new-button">Add New</a>
     <a href="#" (click)="editRecord(this.valley)">Edit</a>
     <a href="#" (click)="deleteRecord(this.valley)">Delete</a>
-  </td>
+  </div>
+</div>
+</div>
 </div>
